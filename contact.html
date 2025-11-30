@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - Trade Guru Forex Academy</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #0e1a2b, #1f3b73, #274b8f);
+        color: #fff;
+    }
+
+    /* HEADER */
+    header {
+        padding: 18px;
+        text-align: center;
+        font-size: 26px;
+        font-weight: 600;
+        background: rgba(255,255,255,0.08);
+        backdrop-filter: blur(10px);
+        color: #f7f7f7;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 60px auto;
+        padding: 20px;
+    }
+
+    /* HEADING */
+    h2 {
+        text-align: center;
+        font-size: 38px;
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
+
+    p.subtitle {
+        text-align: center;
+        max-width: 600px;
+        margin: auto;
+        color: #d2d9e9;
+        font-size: 16px;
+    }
+
+    /* GRID */
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        margin-top: 50px;
+    }
+
+    /* CARD BASE */
+    .card {
+        background: rgba(255,255,255,0.12);
+        padding: 25px;
+        border-radius: 18px;
+        backdrop-filter: blur(12px);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    }
+
+    /* CONTACT INFO */
+    .info-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 18px;
+    }
+    .info-item img {
+        width: 38px;
+        margin-right: 15px;
+    }
+    .info-item p {
+        margin: 0;
+        font-size: 16px;
+        color: #d4e0f4;
+    }
+
+    /* FORM */
+    input, textarea {
+        width: 90%;
+        padding: 15px;
+        margin-top: 15px;
+        border: 1px solid black;
+        border-radius: 8px;
+        outline: none;
+        font-size: 14px;
+        font-family: inherit;
+    }
+
+    textarea {
+        height: 120px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        margin-top: 15px;
+        background: #ffb347;
+        color: #000;
+        font-weight: bold;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 17px;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #ff9a24;
+    }
+
+    /* MOBILE VIEW */
+    @media (max-width: 760px) {
+        .grid {
+            grid-template-columns: 1fr;
+        }
+        h2 {
+            font-size: 30px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<header>Trade Guru Forex Academy</header>
+
+<div class="container">
+
+    <h2>Contact Us</h2>
+    <p class="subtitle">
+        Have questions? Need support? Want to join our courses?<br>
+        Send us a message — we’ll get back to you shortly.
+    </p>
+
+    <div class="grid">
+
+        <!-- CONTACT INFO -->
+        <div class="card">
+            <h3 style="margin-bottom:20px; font-size:22px;">Get In Touch</h3>
+
+            <div class="info-item">
+                <img src="https://cdn-icons-png.flaticon.com/512/126/126341.png">
+                <p><b>Phone:</b> +91 9876543210</p>
+            </div>
+
+            <div class="info-item">
+                <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png">
+                <p><b>Email:</b> tradeguruacademy@gmail.com</p>
+            </div>
+
+            <div class="info-item">
+                <img src="https://cdn-icons-png.flaticon.com/512/535/535239.png">
+                <p><b>Address:</b><br>Nashik | Niphad | Yeola</p>
+            </div>
+
+            <hr style="border-color:rgba(255,255,255,0.2); margin:20px 0;">
+
+            <p style="color:#c7d3eb; line-height:1.6;">
+                We provide professional Stock Market & Forex education with real-time 
+                training. Contact us for Offline, Online, or Personal Mentorship.
+            </p>
+        </div>
+
+        <!-- CONTACT FORM -->
+        <div class="card">
+            <h3 style="margin-bottom:20px; font-size:22px;">Send a Message</h3>
+
+            <form>
+                <label>Name</label>
+                <input type="text" placeholder="Enter your name" required>
+                
+
+                <label>Email</label>
+                <input type="email" placeholder="Enter your email" required>
+            
+
+                <label>Message</label>
+                <textarea placeholder="Write your message..." required></textarea>
+        
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
