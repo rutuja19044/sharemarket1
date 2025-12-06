@@ -1033,13 +1033,8 @@ document.addEventListener("click", function(event) {
     }
 });
 </script>
-<!-- BUTTON TO OPEN POPUP -->
 
-<!-- <button onclick="openPopup()" style="
-position:fixed; bottom:20px; right:20px; 
-padding:12px 22px; background:#ffb347; color:black; 
-border-radius:10px; border:none; font-weight:bold;
-cursor:pointer; z-index:2001;"></button> -->
+<!-- BUTTON on right side to open pop up to show the social media link-->
 
 
 
@@ -1056,6 +1051,27 @@ background:none; border:none; cursor:pointer;
 z-index:2001; padding:0;">
     <img src="phone.jpg" style="width:50px; height:50px; object-fit:contain; border-radius: 50%;">
 </button>
+
+<button onclick="window.location='qr.html'" style="
+position:fixed; right:60px; bottom:100px;
+background:none; border:none; cursor:pointer; padding:0; z-index:2001;">
+    <img src="telegram.jpg" style="width:50px; border-radius:50%;">
+</button>
+
+<button onclick="window.location='qr.html'" style="
+position:fixed; right:60px; bottom:160px;
+background:none; border:none; cursor:pointer; padding:0; z-index:2001;">
+    <img src="whatsapp.jpg" style="width:50px; border-radius:50%;">
+</button>
+
+<button onclick="window.location='qr.html'" style="
+position:fixed; right:60px; bottom:220px;
+background:none; border:none; cursor:pointer; padding:0; z-index:2001;">
+    <img src="instagram.jpg" style="width:50px; border-radius:50%;">
+</button>
+
+
+
 
 
 
@@ -1109,6 +1125,12 @@ function showLogin(){
 function scrollToContact(){
     window.location.href = "contact.html"; 
 }
+
+
+function scrollToQR(){
+    document.getElementById("qr-section").scrollIntoView({ behavior: "smooth" });
+}
+
 
 
 </script>
