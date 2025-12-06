@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Instagram QR</title>
+<style>
+body{
+    margin:0; font-family:Arial;
+    display:flex; justify-content:center; align-items:center;
+    height:100vh; background:url('bg.jpg') center/cover no-repeat;
+    backdrop-filter: blur(6px);
+}
+.box{
+    background:rgba(255,255,255,0.15);
+    padding:40px; border-radius:15px;
+    backdrop-filter: blur(15px);
+    text-align:center; color:white;
+    box-shadow:0 0 30px rgba(0,0,0,0.4);
+}
+.box img{ width:230px; border-radius:10px; }
+.back{ margin-top:20px; display:inline-block;
+       background:white; padding:8px 18px; border-radius:8px;
+       color:black; text-decoration:none; font-weight:bold; }
+</style>
+</head>
+
+<body>
+<div class="box">
+    <h2>Scan Instagram QR</h2>
+    <img src="qr-instagram.jpg">
+    <br><a href="qr.html" class="back">Back</a>
+</div>
+</body>
+</html>
