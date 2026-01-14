@@ -1,13 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" type="image/png" href="fevicon.png">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Share Market Classes</title>
 
 <style>
+  body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
 
-    
+ 
+
+.body{
+  width:100%;
+  margin:0;
+  padding:0;
+  overflow-x:hidden;
+  font-family: Arial, sans-serif;
+  background:wheat;
+}
+
+   
+
+h2{
+  text-align:center;
+  margin-bottom:30px;
+  color:#222;
+}
+
+/* FAQ Container */
+.faq-container{
+  max-width:800px;
+  margin:auto;
+}
+
+/* FAQ Item */
+.faq-item{
+  background:#fff;
+  margin-bottom:15px;
+  border-radius:8px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  overflow:hidden;
+}
+
+/* Question */
+.faq-question{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 20px;
+  cursor:pointer;
+  font-size:16px;
+  font-weight:600;
+  color:#0f4c81;
+}
+
+/* Plus Icon */
+.faq-question span{
+  font-size:24px;
+  transition:transform 0.3s ease;
+}
+
+/* Answer */
+.faq-answer{
+  max-height:0;
+  overflow:hidden;
+  padding:0 20px;
+  color:#555;
+  font-size:15px;
+  line-height:1.6;
+  transition:max-height 0.4s ease, padding 0.3s ease;
+}
+
+/* Active State */
+.faq-item.active .faq-answer{
+  max-height:300px;
+  padding:15px 20px 20px;
+}
+
+.faq-item.active .faq-question span{
+  transform:rotate(45deg); /* + becomes × */
+}
+
+    /* ---------- HEADER FIX ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.main-header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 1000;
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.brand img {
+  height: 60px;
+}
+
+/* Desktop Menu */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #0f4c81;
+  font-weight: 600;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 70px;
+  right: 15px;
+  width: 200px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  z-index: 2000;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 14px 20px;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-menu a:last-child {
+  border-bottom: none;
+}
+
+/* ---------- MOBILE VIEW ---------- */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
 /* -------------------- BASIC STYLES -------------------- */
 :root{
   --accent:#0f4c81;
@@ -328,100 +497,190 @@ nav a{
 nav a:hover{
   text-decoration:underline;
 }
+.hero-slider {
+ position: relative;
+  height: 90vh;
+  overflow: hidden;
+  }
+
+
+.slides {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: none;
+}
+
+.slides::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  padding: 100px 80px;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.hero-buttons .btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.btn.primary {
+  background: #4f7cff;
+  color: white;
+}
+
+.btn.secondary {
+  background: white;
+  color: #333;
+}
+
+.fade {
+  animation: fadeEffect 1.2s;
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0.4;}
+  to {opacity: 1;}
+}
+
+/* Mobile */
+@media(max-width:768px){
+  .hero-content {
+    padding: 80px 30px;
+  }
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+}
 
 </style>
 </head>
 
 <body>
+  <!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="fevicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="fevicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="shortcut icon" href="fevicon.png">
+
 
 <!-- -------------------- HEADER -------------------- -->
-<header>
-  <nav>
+<header class="main-header">
+  <nav class="navbar">
+
+    <!-- Logo -->
     <div class="brand">
       <img src="logo trade guru .jpg" alt="Trade Guru Logo">
     </div>
 
-    <!-- <div style="font-size:22px; font-weight:700; color:#0a3d62;">
-        TRADE GURU FOREX ACADEMY
-    </div> -->
-   
-     <!-- NAVIGATION BAR -->
-<nav style="
-    width:100%;
-    padding:20px 20px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    position: absolute;
-    top:0;
-    left:0;
-    z-index:999;
-">
+    <!-- Hamburger Icon (Mobile Only) -->
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
 
-    <!-- CENTER TITLE -->
-    <div style="font-size:22px; font-weight:700; color:#0a3d62; text-align:center; width:100%;">
-        TRADE GURU FOREX ACADEMY
-    </div>
-
-    <!-- HAMBURGER ICON -->
-    <div class="hamburger" onclick="toggleMenu()" style="
-        font-size:28px; 
-        cursor:pointer; 
-        position:absolute; 
-        right:5px;
-    ">
-        &#9776;
-    </div>
-</nav>
-</nav>
-
-
-<!-- DROPDOWN MENU -->
-<div id="dropdownMenu" style="
-    display:none;
-    position:fixed;
-    top:60px;
-    right:15px;
-    background:#ffffff;
-    width:200px;
-    border-radius:8px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.15);
-    padding:10px 0;
-    z-index:1000;
-">
-    <a href="#about" style="display:block; padding:12px 20px; text-decoration:none; color:#333;">About</a>
-    <a href="#services" style="display:block; padding:12px 20px; text-decoration:none; color:#333;">Services</a>
-    <a href="#courses" style="display:block; padding:12px 20px; text-decoration:none; color:#333;">Courses</a>
-    <a href="#contact" style="display:block; padding:12px 20px; text-decoration:none; color:#333;">Contact</a>
-    <a href="#payment" style="display:block; padding:12px 20px; text-decoration:none; color:#333;">Payment</a>
-
-    <!-- SUPPORT OPENS NEW PAGE -->
-    <a href="support.html" style="display:block; padding:12px 20px; text-decoration:none; color:#333;">
-        Support
-    </a>
-</div>
-
-
+    <!-- Desktop Menu (optional – hidden on mobile) -->
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#courses">Courses</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#payment">Payment</a></li>
+      <li><a href="support.html">Support</a></li>
+    </ul>
 
   </nav>
 </header>
 
+<!-- Mobile Dropdown Menu -->
+<div id="dropdownMenu" class="mobile-menu">
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#courses">Courses</a>
+  <a href="#contact">Contact</a>
+  <a href="#payment">Payment</a>
+  <a href="support.html">Support</a>
+</div>
+<script>
+function toggleMenu() {
+  const menu = document.getElementById("dropdownMenu");
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+
+document.addEventListener("click", function (e) {
+  const menu = document.getElementById("dropdownMenu");
+  const burger = document.querySelector(".hamburger");
+
+  if (!menu.contains(e.target) && !burger.contains(e.target)) {
+    menu.style.display = "none";
+  }
+});
+</script>
+
+
 
 <!-- -------------------- HERO -------------------- -->
-<div class="hero" id="home">
+<!-- <div class="hero" id="home">
   <h1>Learn Stock Market Trading</h1>
   <p>Beginner to Advanced Courses | Live Trading Sessions | 100% Practical Training</p>
-</div>
+</div> -->
+<section class="hero-slider">
+  <div class="slides fade" style="background-image:url('img1.jpg')">
+    <div class="hero-content">
+      <h1>Online Trading Academy</h1>
+      <p>Learn stock & forex trading from experts</p>
+      <div class="hero-buttons">
+        <a href="#" class="btn primary">Our Courses</a>
+        <a href="#" class="btn secondary">Learn More</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="slides fade" style="background-image:url('img2.jpg')">
+    <div class="hero-content">
+      <h1>Become a Professional Trader</h1>
+      <p>Live market training with real strategies</p>
+      <div class="hero-buttons">
+        <a href="#" class="btn primary">Join Now</a>
+        <a href="#" class="btn secondary">View Details</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="slides fade" style="background-image:url('img3.jpg')">
+    <div class="hero-content">
+      <h1>Trade With Confidence</h1>
+      <p>Learn risk management & psychology</p>
+      <div class="hero-buttons">
+        <a href="#" class="btn primary">Start Learning</a>
+        <a href="#" class="btn secondary">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- -------------------- ABOUT -------------------- -->
-<!-- <section id="about">
-  <h2>About Us</h2>
-  <p style="text-align:center;color:black; font-weight: 20px;">
-    Trade Guru Academy is led by an experienced stock market trader with over 7+ years of hands-on market expertise in equity, derivatives, and options trading. Having trained hundreds of students, he combines real-market knowledge with practical teaching methods designed for beginners as well as advanced learners. His journey started as a self-learner who understood the challenges new traders face—lack of proper guidance, emotional control, and strategic discipline. Today, he uses his experience to simplify complex market concepts, provide live trading demonstrations, and help students build confidence to trade independently. Our mission is to create financially aware individuals who can analyze markets smartly, manage risks effectively, and grow consistently.
-    We provide high-quality share market training with real-time market examples,  
-    designed for beginners, intermediate, and advanced level traders.
-  </p>
-</section> -->
 
 <section id="about" style="padding:50px 20px;">
   <h2 style="color:#0f2340; text-align:left;">About Us</h2>
@@ -433,6 +692,7 @@ nav a:hover{
     gap:60px;
     margin-top:30px;
     flex-wrap:wrap;
+
   ">
 
     <!-- LEFT SIDE TEXT (SHORT VERSION + READ MORE) -->
@@ -587,7 +847,7 @@ nav a:hover{
 
         box-shadow:0 4px 20px rgba(0,0,0,0.08); text-align:center;">
         
-        <img src="online-icon.png" style="width:100px;">
+        <img src="share market online.jpeg" style="width:100px;">
         <h3>Online Class</h3>
         <p>Start your learning journey anytime with our online live class!</p>
         <button style="
@@ -601,7 +861,7 @@ nav a:hover{
         background:white; width:300px; padding:20px; border-radius:15px;
         box-shadow:0 4px 20px rgba(0,0,0,0.08); text-align:center;">
         
-        <img src="offline-icon.png" style="width:100px;">
+        <img src="share market offline.jpeg" style="width:100px;">
         <h3>Offline Class</h3>
         <p>Get real-time guidance and personal support in our offline training.</p>
         <button style="
@@ -615,7 +875,7 @@ nav a:hover{
         background:white; width:300px; padding:20px; border-radius:15px;
         box-shadow:0 4px 20px rgba(0,0,0,0.08); text-align:center;">
         
-        <img src="recorded-icon.png" style="width:100px;">
+        <img src="share market recorded.jpeg" style="width:100px;">
         <h3>Recorded Class</h3>
         <p>Learn anytime, anywhere with our recorded lessons.</p>
         <button style="
@@ -764,13 +1024,18 @@ nav a:hover{
       <a href="#" style="color:#0066ff; font-weight:bold; text-decoration:none;">Read More</a>
       <br><br>
 
+      <!--============== Brochure download ============== -->
+
       <button style="background:#ffb347; border:0; padding:12px 25px; border-radius:8px; cursor:pointer;">
-        Brochure Download
+      
+      <a href="brocher.jpeg" download style="padding: 10px 18px; background: #ffb347;
+      color: #111; text-decoration: none; border-radius: 6px;">Download Brochure</a>
       </button>
     </div>
+    </div><br><br>
 
     <!-- Right Grid -->
-    <div style="flex:1.3; min-width:300px; display:grid; grid-template-columns:repeat(3,1fr); gap:15px;">
+    <div style="flex:1.2; min-width:300px; display:grid; grid-template-columns:repeat(2,1fr); gap:15px;">
 
       <div style="background:#eef8f4; padding:20px; text-align:center; border-radius:10px; font-weight:bold;">
         Foundation of Stock Market
@@ -795,14 +1060,14 @@ nav a:hover{
       <div style="background:#eef8f4; padding:20px; text-align:center; border-radius:10px; font-weight:bold;">
         Strategic Live Analysis
       </div>
-
+<!---
       <div style="background:#eef8f4; padding:20px; text-align:center; border-radius:10px; font-weight:bold;">
         Trading Psychology & Risk
       </div>
 
       <div style="background:#eef8f4; padding:20px; text-align:center; border-radius:10px; font-weight:bold;">
         Practical Session on Live Market
-      </div>
+      </div>--->
 
     </div>
 
@@ -883,8 +1148,8 @@ nav a:hover{
 
       <!-- Testimonial 1 -->
       <div style="flex:1; min-width:280px; background:white; border-radius:14px; padding:20px; box-shadow:0 4px 20px rgba(0,0,0,0.08);">
-        <img src="girl.jpg" style="width:160px; height:160px; border-radius:50%; object-fit:cover;">
-        <h3>Shweta Shahane</h3>
+        <img src="rutuja.jpg" style="width:160px; height:160px; border-radius:50%; object-fit:cover;">
+        <h3>Rutuja Dumbare</h3>
         <p style="color:#777;">College Student</p>
         <p style="color:#444;">
           This recorded personal finance course was perfect for me. It explained mutual funds,
@@ -894,8 +1159,8 @@ nav a:hover{
 
       <!-- Testimonial 2 -->
       <div style="flex:1; min-width:280px; background:white; border-radius:14px; padding:20px; box-shadow:0 4px 20px rgba(0,0,0,0.08);">
-        <img src="boy.jpg" style="width:160px; height:160px; border-radius:50%; object-fit:cover;">
-        <h3>Navnath Khandekar</h3>
+        <img src="swapnil.png" style="width:160px; height:160px; border-radius:50%; object-fit:cover;">
+        <h3>Swapnil Hengade</h3>
         <p style="color:#777;">Active Trader, Student</p>
         <p style="color:#444;">
           This course gave me clarity on investments & savings. It's crisp and perfectly designed
@@ -914,45 +1179,122 @@ nav a:hover{
 
 
 <!-- ===================== FAQ SECTION ===================== -->
-<section id="faq" style="padding:60px 20px; background:#f7f7f7;">
-  <h2 style="text-align:center; font-size:32px; margin-bottom:35px; color:#111;">
-    Frequently Asked Questions
-    
-  </h2>
+<h2>Frequently Asked Questions</h2>
 
-  <div style="max-width:900px; margin:auto;">
+<div class="faq-container">
 
-    <div style="background:#fff; padding:20px; border-radius:12px; margin-bottom:18px; box-shadow:0 2px 8px rgba(0,0,0,0.05);">
-      <h3 style="margin-top:0; color:#0f4c81;">What courses do you provide?</h3>
-      <p style="color:#444; line-height:1.6;">
-        We provide Stock Market Training, Forex Trading Courses, Technical Analysis,
-        Intraday Training and many other financial market programs.
-      </p>
+  <div class="faq-item">
+    <div class="faq-question">
+      What is the Share Market?
+      <span>+</span>
     </div>
-
-    <div style="background:#fff; padding:20px; border-radius:12px; margin-bottom:18px; box-shadow:0 2px 8px rgba(0,0,0,0.05);">
-      <h3 style="margin-top:0; color:#0f4c81;">Do I need any previous experience?</h3>
-      <p style="color:#444; line-height:1.6;">
-        No, we teach from beginner to advanced level. Anyone can start learning.
-      </p>
+    <div class="faq-answer">
+      The share market is a platform where investors buy and sell shares of publicly listed companies to earn profit.
     </div>
-
-    <div style="background:#fff; padding:20px; border-radius:12px; margin-bottom:18px; box-shadow:0 2px 8px rgba(0,0,0,0.05);">
-      <h3 style="margin-top:0; color:#0f4c81;">Are offline classes available?</h3>
-      <p style="color:#444; line-height:1.6;">
-        Yes, offline classes are available at Nashik, Niphad and Yeola branches.
-      </p>
-    </div>
-
-    <div style="background:#fff; padding:20px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.05);">
-      <h3 style="margin-top:0; color:#0f4c81;">How can I contact you?</h3>
-      <p style="color:#444; line-height:1.6;">
-        You can contact us through WhatsApp, call or by filling the contact form on our website.
-      </p>
-    </div>
-
   </div>
-</section>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Who can learn Share Market Trading?
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      Anyone above 18 years with basic financial knowledge can learn share market trading, including students and working professionals.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Do I need prior experience to start trading?
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      No prior experience is required. Our courses start from beginner level and move towards advanced strategies.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What is Intraday Trading?
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      Intraday trading involves buying and selling stocks within the same trading day to earn short-term profits.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What is Long-Term Investment?
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      Long-term investment means holding stocks for several years to benefit from company growth and compounding.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What is Technical Analysis?
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      Technical analysis studies price charts, patterns, and indicators to predict future price movements.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Is Share Market Trading risky?
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      Yes, trading involves risk, but proper knowledge, risk management, and discipline can reduce losses significantly.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Do you provide live market training?
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      Yes, we provide live market sessions where students learn real-time market analysis and trading execution.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Are offline classes available?
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      Yes, offline classes are available at Nashik, Niphad, and Yeola branches.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      How can I contact or enroll?
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      You can contact us via WhatsApp, phone call, or by filling the inquiry form on our website.
+    </div>
+  </div>
+
+</div>
+
+<script>
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach(item => {
+  item.querySelector(".faq-question").addEventListener("click", () => {
+    item.classList.toggle("active");
+  });
+});
+</script>
+
 
 <!--branches of classes -->
 
@@ -967,7 +1309,7 @@ nav a:hover{
                 <span class="loc-icon">📍</span> College Road, Nashik
             </div>
 
-            <a href="https://maps.app.goo.gl/rqQ2pVQY7P6SFjZc9" target="_blank" class="map-btn">
+            <a href="https://maps.app.goo.gl/cYfWTYc9UN3YEg4N9" target="_blank" class="map-btn">
                 View on Map
             </a>
         </div>
@@ -978,7 +1320,7 @@ nav a:hover{
                 <span class="loc-icon">📍</span> Niphad, Nashik District
             </div>
 
-            <a href="https://maps.app.goo.gl/FK3Hh6pTFGnVxgPFA" target="_blank" class="map-btn">
+            <a href="https://maps.app.goo.gl/Q1vojzXZXqP8CsPU6" target="_blank" class="map-btn">
                 View on Map
             </a>
         </div>
@@ -1052,7 +1394,7 @@ document.addEventListener("click", function(event) {
 </script>
 
 <!-- BUTTON on right side to open pop up to show the social media link-->
-
+<!-----
 
 
 <button onclick="openPopup()" style="
@@ -1060,7 +1402,7 @@ position:fixed; right:80px; top:10px;
 background:none; border:none; cursor:pointer; color: black;
 z-index:2001; padding:0;">
 <h1>Login</h1>
-    <!-- <img src="user icon.jpg" style="width:35px; height:35px; object-fit:contain; border-radius: 50%;"> -->
+    <img src="user icon.jpg" style="width:35px; height:35px; object-fit:contain; border-radius: 50%;"> 
 </button>
 
 <button onclick="scrollToContact()" style="
@@ -1089,7 +1431,7 @@ background:none; border:none; cursor:pointer; padding:0; z-index:2001;">
 </button>
 
 
-
+------>
 
 
 
@@ -1149,9 +1491,27 @@ function scrollToQR(){
     document.getElementById("qr-section").scrollIntoView({ behavior: "smooth" });
 }
 
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let slides = document.getElementsByClassName("slides");
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) { slideIndex = 1 }
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 4000); // change every 4 seconds
+}
+
+
+
 
 
 </script>
+
+
 
 
 
