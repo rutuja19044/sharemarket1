@@ -1,0 +1,1707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Share Market Classes</title>
+
+<style>
+/* ========== FORCE VISIBILITY FIX ========== */
+
+.nav-links a {
+  -webkit-text-fill-color: initial !important;
+  background-clip: initial !important;
+}
+
+/* ========== COLORFUL NAV PILLS ========== */
+
+.nav-pill {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #18c7df !important;   /* FORCE TEXT COLOR */
+  text-decoration: none;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.90);
+  transition: all 0.3s ease;
+}
+
+/* Individual backgrounds */
+.nav-pill.about {
+  background: #03080c;
+}
+
+.nav-pill.services {
+  background: #061606;
+}
+
+.nav-pill.courses {
+  background: #0b080c;
+}
+
+.nav-pill.contact {
+  background: #131110;
+}
+
+.nav-pill.payment {
+  background: #010f11;
+}
+
+.nav-pill.support {
+  background: #251717;
+}
+
+/* Hover effect */
+.nav-pill:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+}
+.main-header {
+  background: #ffffff;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+
+  /* ================= PREMIUM NAVBAR ================= *//*13-1-26*/
+
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color:cyan;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+/* Navbar container */
+.navbar {
+  max-width: 1300px;
+  margin: auto;
+  height: 90px;              /* FIX HEIGHT */
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ================= LOGO 3D ================= */
+.brand img {
+  height: 60px;
+  border-radius: 14px;
+  padding: 6px;
+  background: linear-gradient(135deg,#000,#111);
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.35),
+    inset 0 0 12px rgba(255,255,255,0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+/* 3D Hover Effect */
+.brand img:hover {
+  transform: translateY(-4px) scale(1.05) rotateX(10deg);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.45);
+}
+
+/* ================= MENU ================= */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Colorful menu text */
+.nav-links a {
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 700;
+  background: linear-gradient(90deg,#0f4c81,#ff9800,#7c4dff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Underline animation */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg,#ff9800,#7c4dff);
+  transition: 0.3s;
+  border-radius: 4px;
+}
+
+/* Hover animation */
+.nav-links a:hover {
+  transform: translateY(-3px);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ================= HAMBURGER ================= */
+.hamburger {
+  display: none;
+  font-size: 32px;
+  cursor: pointer;
+  color: #0f4c81;
+}
+
+/* ================= MOBILE ============13-1-26===== */
+@media (max-width: 768px) {
+
+  .navbar {
+    height: 80px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+ /* Hero slider full screen */
+  .hero-slider {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+.slides {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: none;
+}
+
+.slides::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  padding: 100px 80px;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.hero-buttons .btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.btn.primary {
+  background: #4f7cff;
+  color: white;
+}
+
+.btn.secondary {
+  background: white;
+  color: #333;
+}
+
+.fade {
+  animation: fadeEffect 1.2s;
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0.4;}
+  to {opacity: 1;}
+}
+
+/* Mobile */
+@media(max-width:768px){
+  .hero-content {
+    padding: 80px 30px;
+  }
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+}
+.body{
+  width:100%;
+  margin:0;
+  padding:0;
+  overflow-x:hidden;
+  font-family: Arial, sans-serif;
+  background:#f4f6fb;
+}
+
+   
+
+h2{
+  text-align:center;
+  margin-bottom:30px;
+  color:#222;
+}
+
+/* FAQ Container */
+.faq-container{
+  max-width:800px;
+  margin:auto;
+}
+
+/* FAQ Item */
+.faq-item{
+  background:#fff;
+  margin-bottom:15px;
+  border-radius:8px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  overflow:hidden;
+}
+
+/* Question */
+.faq-question{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 20px;
+  cursor:pointer;
+  font-size:16px;
+  font-weight:600;
+  color:#0f4c81;
+}
+
+/* Plus Icon */
+.faq-question span{
+  font-size:24px;
+  transition:transform 0.3s ease;
+}
+
+/* Answer */
+.faq-answer{
+  max-height:0;
+  overflow:hidden;
+  padding:0 20px;
+  color:#555;
+  font-size:15px;
+  line-height:1.6;
+  transition:max-height 0.4s ease, padding 0.3s ease;
+}
+
+/* Active State */
+.faq-item.active .faq-answer{
+  max-height:300px;
+  padding:15px 20px 20px;
+}
+
+.faq-item.active .faq-question span{
+  transform:rotate(45deg); /* + becomes × */
+}
+
+    /* ---------- HEADER FIX ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.main-header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 1000;
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.brand img {
+  height: 60px;
+}
+
+/* Desktop Menu */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #0f4c81;
+  font-weight: 600;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 70px;
+  right: 15px;
+  width: 200px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  z-index: 2000;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 14px 20px
+  ;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-menu a:last-child {
+  border-bottom: none;
+}
+
+/* ---------- MOBILE VIEW ---------- */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* -------------------- BASIC STYLES -------------------- */
+:root{
+  --accent:#0f4c81;
+  --muted:#555;
+  --bg: lavender;
+}
+
+
+body{
+  margin:0;
+  font-family:Arial;
+  background:var(--bg);
+}
+
+/* ====================== LOGIN & SIGNUP POPUP ====================== */
+.popup-container{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    backdrop-filter: blur(8px);
+    background: rgba(0,0,0,0.55);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:2000;
+}
+
+.popup-box{
+    background:#fff;
+    width:350px;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 5px 25px rgba(0,0,0,0.3);
+    animation: fadeIn 0.4s;
+    text-align:center;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:scale(0.9);}
+    to{opacity:1; transform:scale(1);}
+}
+
+.popup-box h2{
+    margin-bottom:15px;
+    color:#0f4c81;
+}
+
+.popup-box input{
+    width:90%;
+    padding:10px;
+    margin:8px 0;
+    border-radius:6px;
+    border:1px solid #ccc;
+}
+
+.popup-box button{
+    width:90%;
+    padding:10px;
+    margin-top:10px;
+    border-radius:6px;
+    border:none;
+    background:#0f4c81;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.close-btn{
+    background:red !important;
+    margin-top:15px;
+}
+
+.switch{
+    font-size:14px;
+    margin-top:10px;
+    cursor:pointer;
+    color:#0f4c81;
+    text-decoration:underline;
+}
+
+
+/* -------------------- HEADER -------------------- */
+/*
+header{
+  background: white;
+  padding:10px 20px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top:0;
+  z-index:10;
+}
+
+nav{
+  max-width:1100px;
+  margin: auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.brand img{
+  height:110px;
+  width:auto;
+}
+
+nav a{
+  text-decoration:none;
+  margin-left:20px;
+  color:var(--accent);
+  font-weight:600;
+}
+*/
+/* -------------------- HERO SECTION -------------------- */
+.hero{
+  position:relative;
+  text-align:center;
+  color: #f4f7fb;
+  padding:100px 20px;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  top: 0;left:0;
+  width:100%;height:100%;
+  background: url('financial-data-visualization-stock-market-charts.jpg') center/cover;
+  filter:brightness(40%);
+  z-index:-1;
+  
+}
+
+.hero h1{
+  font-size:2.5rem;
+  margin:0;
+}
+
+.hero p{
+  margin-top:10px;
+  font-size:1.1rem;
+}
+
+/* -------------------- SECTIONS -------------------- */
+section{
+  max-width:1100px;
+  margin:50px auto;
+  padding:0 20px;
+}
+
+h2{
+  text-align:center;
+  color:var(--accent);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  margin-top:20px;
+}
+
+.card{
+  background:white;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* -------------------- CONTACT FORM -------------------- */
+form input, form textarea{
+  width:100%;
+  margin:10px 0;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #ddd;
+}
+
+button{
+  padding:10px 20px;
+  background:var(--accent);
+  color:white;
+  border:0;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* -------------------- FOOTER -------------------- */
+footer{
+  background:#0f4c81;
+  color:white;
+  text-align:center;
+  padding:20px;
+  margin-top:30px;
+}
+/*---------------------aboutUs-----------*/
+/* ================= ABOUT SECTION =====13-1-26============ */
+
+.about-section {
+  background: linear-gradient(135deg, #1330b3, #f8f9ff);
+  padding: 80px 20px;
+}
+
+/* Layout */
+.about-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+/* LEFT TEXT */
+.about-text {
+  flex: 1;
+  color: #010307;
+}
+
+.about-text h2 {
+  font-size: 2.6rem;
+  margin-bottom: 18px;
+  position: relative;
+}
+
+/* Underline accent */
+.about-text h2::after {
+  content: "";
+  width: 50px;
+  height: 4px;
+  background: linear-gradient(90deg, #4f7cff, #00e5ff);
+  display: block;
+  margin-top: 8px;
+  border-radius: 5px;
+}
+
+.about-text p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #2d2d2d;
+  margin-bottom: 30px;
+}
+
+/* Button */
+.about-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #ffb347, #ff9800);
+  color: #111;
+  padding: 12px 26px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(255, 152, 0, 0.35);
+  transition: all 0.3s ease;
+}
+
+.about-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(255, 152, 0, 0.45);
+}
+
+/* RIGHT IMAGE */
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: white;
+  padding: 8px;
+  box-shadow:
+    0 20px 45px rgba(0,0,0,0.25),
+    inset 0 0 18px rgba(255,255,255,0.6);
+  transition: transform 0.4s ease;
+}
+
+/* 3D hover */
+.about-image img:hover {
+  transform: rotateY(10deg) rotateX(6deg) scale(1.05);
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  .about-container {
+    flex-direction: column;
+    text-align: left;
+    gap: 40px;
+  }
+
+  .about-text h2 {
+    font-size: 2.2rem;
+  }
+
+  .about-image img {
+    width: 230px;
+    height: 230px;
+  }
+}
+
+  /*------- Heading Background image------*/
+   /* -------------------- HEADER WITH BACKGROUND IMAGE -------------------- */
+/*  
+header {
+  background: url('hero1.jpg') center/cover no-repeat; /* Add your bg image */
+ /* padding:10px 20px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.35); /* Dark overlay for readability */
+ /* z-index: -1;
+}
+
+nav{
+  max-width:1200px;
+  margin: auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position: relative;
+  z-index: 2;
+}
+
+.branches-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.card-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.branch-card {
+    width: 300px;
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.12);
+    transition: 0.3s;
+    text-align: left;
+}
+
+.branch-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.18);
+}
+
+.card-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #0a3d62;
+}
+
+.location {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.loc-icon {
+    color: #c0392b;
+    margin-right: 5px;
+}
+
+
+/* Logo */
+/*.brand img{
+  height:80px;
+  width:auto;
+  border-radius:12px; /* optional */
+
+
+/* Nav links */
+/*nav a{
+  text-decoration:none;
+  margin-left:25px;
+  color:#ffffff; /* White text looks better on background */
+ /* font-weight:600;
+  font-size:18px;
+}
+
+nav a:hover{
+  text-decoration:underline;
+}
+*/
+</style>
+</head>
+
+<body>
+
+<!-- -------------------- HEADER -------------------- -->
+<header class="main-header">
+  <nav class="navbar">
+
+    <!-- Logo -->
+    <div class="brand">
+      <img src="logo trade guru .jpg" alt="Trade Guru Logo">
+    </div>
+
+    <!-- Hamburger Icon (Mobile Only) -->
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+
+    <!-- Desktop Menu (optional – hidden on mobile) --><!---13-1-26-->
+<ul class="nav-links">
+   
+  <li><a href="#about" class="nav-pill about">About</a></li>
+  <li><a href="#services" class="nav-pill services">Services</a></li>
+  <li><a href="#courses" class="nav-pill courses">Courses</a></li>
+  <li><a href="#contact" class="nav-pill contact">Contact</a></li>
+  <li><a href="#payment" class="nav-pill payment">Payment</a></li>
+  <li><a href="support.html" class="nav-pill support">Support</a></li>
+</ul>
+
+  </nav>
+</header>
+
+<!-- Mobile Dropdown Menu -->
+<div id="dropdownMenu" class="mobile-menu">
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#courses">Courses</a>
+  <a href="#contact">Contact</a>
+  <a href="#payment">Payment</a>
+  <a href="support.html">Support</a>
+</div>
+<script>
+function toggleMenu() {
+  const menu = document.getElementById("dropdownMenu");
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+
+document.addEventListener("click", function (e) {
+  const menu = document.getElementById("dropdownMenu");
+  const burger = document.querySelector(".hamburger");
+
+  if (!menu.contains(e.target) && !burger.contains(e.target)) {
+    menu.style.display = "none";
+  }
+});
+</script>
+
+
+
+<!-- -------------------- HERO -------------------- -->
+<section class="hero-slider">
+  <div class="slides fade" style="background-image:url('img1.jpg')">
+    <div class="hero-content">
+      <h1>Online Trading Academy</h1>
+      <p>Learn stock & forex trading from experts</p>
+      <div class="hero-buttons">
+        <a href="#" class="btn primary">Our Courses</a>
+        <a href="#" class="btn secondary">Learn More</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="slides fade" style="background-image:url('img2.jpg')">
+    <div class="hero-content">
+      <h1>Become a Professional Trader</h1>
+      <p>Live market training with real strategies</p>
+      <div class="hero-buttons">
+        <a href="#" class="btn primary">Join Now</a>
+        <a href="#" class="btn secondary">View Details</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="slides fade" style="background-image:url('chart.jpg')">
+    <div class="hero-content">
+      <h1>Trade With Confidence</h1>
+      <p>Learn risk management & psychology</p>
+      <div class="hero-buttons">
+        <a href="#" class="btn primary">Start Learning</a>
+        <a href="#" class="btn secondary">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let slides = document.getElementsByClassName("slides");
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) { slideIndex = 1 }
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 4000); // change every 4 seconds
+}
+</script>
+<!-- -------------------- ABOUT -----13-1-26--------------- -->
+<section class="about-section" id="about">
+  <div class="about-container">
+
+    <!-- LEFT CONTENT -->
+    <div class="about-text">
+      <h2>About Us</h2>
+      <p>
+        I am Vilas Shelke Sir, SEBI-registered sub-broker with 7+ years of
+        professional market experience. MAZ TRADE GURU is one of the most
+        trusted and advanced Share Market & Forex Market Training Academies
+        in Nashik. Since 2021, we have been helping students understand the
+        real structure of the Indian Stock Market and Forex Market with
+        practical, live market sessions.
+      </p>
+
+      <a href="about.html" class="about-btn">Read More →</a>
+    </div>
+
+    <!-- RIGHT IMAGE -->
+    <div class="about-image">
+      <img src="sir image .jpg" alt="Vilas Shelke Sir">
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- -------------------- COURSES -------------------- -->
+<section id="courses">
+  <h2>Courses & Pricing</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h2>Indian Stock Market</h2>
+      <h4>Basic To Advance</h4>
+      <p>₹4,999 / $60</p>
+     <ul>
+      <li>Intraday Trading</li>
+      <li>Option Trading</li>
+      <li>Future Trading</li>
+      <li>Swing Trading</li>
+      <li>Long Trading</li>
+      <li>Indian Commodity Market</li>
+     </ul>
+    </div>
+
+    <div class="card">
+      <h2>Forex Trading</h2>
+      <h4>Basic To Advance</h4>
+      <p>₹9,999 / $120</p>
+      <ul>
+        <li>Best Currently pair in trading</li>
+        <li>pairs calculations with move</li>
+        <li>Intraday Trading setup</li>
+        <li>Scalping trading setup</li>
+        <li>break out trading</li>
+        <li>trendline break out trading</li>
+        <li>price action with live market analysis</li>
+      </ul>
+
+      <a href="forex basic .pdf" target="_blank" style="padding: 10px 18px;
+      background: #0f2340; color: white; text-decoration: none; border-radius: 6px;
+      margin-right: 10px;"> View PDF</a>
+
+      <a href="forex basic .pdf" download style="padding: 10px 18px; background: #ffb347;
+      color: #111; text-decoration: none; border-radius: 6px;">Download PDF</a>
+    </div>
+
+    <!-- <div class="card">
+      <h3>Options Trading Course</h3>
+      <p>₹14,999 / $180</p>
+      <p>Strategies + real-market practice.</p>
+    </div>
+  </div> -->
+</section>
+
+
+
+
+<!-- -------------------- SERVICES -------------------- -->
+<section id="services">
+  <h2>Our Services</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Basics to Advance of Stock Market</h3>
+      <ul>
+        <li>Live Trading Classes</li>
+        <li>Live Market Analysis</li>
+        <li>Setup Trade</li>
+        <li>Demo Practice</li>
+        <li>Trading and Charting support</li>
+        <li>Account Operating</li>
+        <li>One on One membership</li>
+        <li>News Updates</li>
+        <li>Apps Operating with set Target / stoploss</li>
+      </ul>
+    </div>
+
+    <!-- <div class="card">
+      <h3>Technical Analysis</h3>
+      <p>Chart patterns, indicators, trend analysis, candlesticks & more.</p>
+    </div>
+
+    <div class="card">
+      <h3>Options Trading</h3>
+      <p>Master strategies such as Iron Condor, Straddle, Strangle & more.</p>
+    </div>
+  </div> -->
+</section>
+
+<!-- ======================= LEARNING STYLE SECTION ======================= -->
+<section style="background:#fff6e5; padding:50px 20px;">
+  <div style="max-width:1100px; margin:auto;">
+    
+    <h2 style="color:#0f2340; margin-bottom:10px;">
+      Select Your Learning Style
+    </h2>
+    <p style="color:#444; max-width:700px;">
+      We understand that everyone learns differently. Whether you prefer live classes,
+      online sessions, or one-on-one mentoring — we have the perfect learning format for you.
+    </p>
+    
+    <!-- Cards Row -->
+    <div style="display:flex; gap:20px; margin-top:30px; flex-wrap:wrap; justify-content:center;">
+      
+      <!-- Card 1 -->
+      <div class="card" style="
+        background:white; width:300px; padding:20px; border-radius:15px;
+
+        box-shadow:0 4px 20px rgba(0,0,0,0.08); text-align:center;">
+        
+        <img src="share market online.jpeg" style="width:100px;">
+        <h3>Online Class</h3>
+        <p>Start your learning journey anytime with our online live class!</p>
+        <button style="
+          background:#ffb347; border:0; padding:10px 20px; border-radius:8px; cursor:pointer;">
+          View Course
+        </button>
+      </div>
+      
+      <!-- Card 2 -->
+      <div class="card" style="
+        background:white; width:300px; padding:20px; border-radius:15px;
+        box-shadow:0 4px 20px rgba(0,0,0,0.08); text-align:center;">
+        
+        <img src="share market offline.jpeg" style="width:100px;">
+        <h3>Offline Class</h3>
+        <p>Get real-time guidance and personal support in our offline training.</p>
+        <button style="
+          background:#ffb347; border:0; padding:10px 20px; border-radius:8px; cursor:pointer;">
+          View Course
+        </button>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card" style="
+        background:white; width:300px; padding:20px; border-radius:15px;
+        box-shadow:0 4px 20px rgba(0,0,0,0.08); text-align:center;">
+        
+        <img src="share market recorded.jpeg" style="width:100px;">
+        <h3>Recorded Class</h3>
+        <p>Learn anytime, anywhere with our recorded lessons.</p>
+        <button style="
+          background:#ffb347; border:0; padding:10px 20px; border-radius:8px; cursor:pointer;">
+          View Course
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ======================= COMPARISON TABLE SECTION ======================= -->
+<section style="background:#f4eefe; padding:50px 20px;">
+  <div style="max-width:1100px; margin:auto;">
+    
+    <h2 style="color:#0a1630; font-size:28px;">Our Classes Are Exceptional</h2>
+    <p style="color:#555; max-width:650px;">
+      In the ever-changing stock market, the right guidance can make all the difference.
+      What makes our classes stand out is our practical, real-market learning approach.
+    </p>
+
+    <div style="
+      background:white; border-radius:15px; margin-top:30px; padding:20px;
+      box-shadow:0 4px 30px rgba(0,0,0,0.08);">
+
+      <table style="width:100%; border-collapse:collapse; font-size:16px;">
+        <thead>
+          <tr style="background:#7c64d5; color:white;">
+            <th style="padding:12px; text-align:left;">Learning Topics</th>
+            <th style="padding:12px; text-align:center;">Our Institute</th>
+            <th style="padding:12px; text-align:center;">Other Institute</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td style="padding:12px;">Basic to Advance Class</td>
+            <td style="text-align:center;">✔</td>
+            <td style="text-align:center;">✖</td>
+          </tr>
+
+          <tr style="background:#fafafa;">
+            <td style="padding:12px;">Unlimited Practical Sessions</td>
+            <td style="text-align:center;">✔</td>
+            <td style="text-align:center;">✖</td>
+          </tr>
+
+          <tr>
+            <td style="padding:12px;">Lifetime Support</td>
+            <td style="text-align:center;">✔</td>
+            <td style="text-align:center;">✖</td>
+          </tr>
+
+          <tr style="background:#fafafa;">
+            <td style="padding:12px;">Affordable Fees</td>
+            <td style="text-align:center;">✔</td>
+            <td style="text-align:center;">✖</td>
+          </tr>
+
+          <tr>
+            <td style="padding:12px;">Online / Offline Access</td>
+            <td style="text-align:center;">✔</td>
+            <td style="text-align:center;">✖</td>
+          </tr>
+
+          <tr style="background:#fafafa;">
+            <td style="padding:12px;">Notes / PPT</td>
+            <td style="text-align:center;">✔</td>
+            <td style="text-align:center;">✖</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- ======================= WHY PEOPLE PREFER SECTION ======================= -->
+<section style="background:white; padding:60px 20px;">
+  <div style="max-width:1100px; margin:auto; display:flex; gap:40px; flex-wrap:wrap;">
+
+    <!-- Left -->
+    <div style="flex:1; min-width:280px;">
+      <h2 style="color:#0f2340; font-size:28px;">
+        Why Do People Prefer Our Share Market Classes?
+      </h2>
+      <p style="color:#444; margin-top:10px;">
+        Transform your trading skills with our specially designed stock market
+        training programs. Our practical learning approach and experienced trainers
+        ensure you learn with confidence.
+      </p>
+    </div>
+
+    <!-- Right Colorful Points -->
+    <div style="flex:1; min-width:280px;">
+      <ul style="list-style:none; padding:0; margin:0;">
+
+        <li style="display:flex; align-items:center; margin:15px 0;">
+          <div style="background:#ffcd83; padding:8px 15px; border-radius:8px;">01</div>
+          <span style="margin-left:15px;">Flexible Learning — Online & Offline</span>
+        </li>
+
+        <li style="display:flex; align-items:center; margin:15px 0;">
+          <div style="background:#8fe1ff; padding:8px 15px; border-radius:8px;">02</div>
+          <span style="margin-left:15px;">100% Practical Course</span>
+        </li>
+
+        <li style="display:flex; align-items:center; margin:15px 0;">
+          <div style="background:#ffa3a3; padding:8px 15px; border-radius:8px;">03</div>
+          <span style="margin-left:15px;">Affordable Fees</span>
+        </li>
+
+        <li style="display:flex; align-items:center; margin:15px 0;">
+          <div style="background:#c4b4ff; padding:8px 15px; border-radius:8px;">04</div>
+          <span style="margin-left:15px;">Career Opportunities & Part-Time Income</span>
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ======================= COURSE MODULES SECTION ======================= -->
+<section style="background:#fff; padding:50px 20px;">
+  <div style="max-width:1100px; margin:auto; display:flex; gap:40px; flex-wrap:wrap;">
+
+    <!-- Left Text -->
+    <div style="flex:1; min-width:300px;">
+      <h2 style="color:#0f2340; font-size:26px; line-height:1.3;">
+        Finearn Share Market Classes Basic to Advance<br>
+        Single Masterclass Syllabus
+      </h2>
+
+      <p style="color:#444; margin-top:10px;">
+        Join the Finearn Share Market Courses in Pune for a comprehensive 8-module masterclass!
+        From basics to advanced strategies, you will gain the confidence to succeed in the market.
+      </p>
+
+      <a href="#" style="color:#0066ff; font-weight:bold; text-decoration:none;">Read More</a>
+      <br><br>
+
+      <button style="background:#ffb347; border:0; padding:12px 25px; border-radius:8px; cursor:pointer;">
+        Brochure Download
+      </button>
+    </div>
+
+    <!-- Right Grid -->
+    <div style="flex:1.2; min-width:300px; display:grid; grid-template-columns:repeat(2,1fr); gap:15px;">
+
+      <div style="background:#eef8f4; padding:20px; text-align:center; border-radius:10px; font-weight:bold;">
+        Foundation of Stock Market
+      </div>
+
+      <div style="background:#eef8f4; padding:20px; text-align:center; border-radius:10px; font-weight:bold;">
+        Indian Capital Market Structure
+      </div>
+
+      <div style="background:#eef8f4; padding:20px; text-align:center; border-radius:10px; font-weight:bold;">
+        Fundamental Analysis & Research
+      </div>
+
+      <div style="background:#eef8f4; padding:20px; text-align:center; border-radius:10px; font-weight:bold;">
+        Mutual Funds & Portfolio
+      </div>
+
+      <div style="background:#eef8f4; padding:20px; text-align:center; border-radius:10px; font-weight:bold;">
+        Technical Analysis & Research
+      </div>
+
+      <div style="background:#eef8f4; padding:20px; text-align:center; border-radius:10px; font-weight:bold;">
+        Strategic Live Analysis
+      </div>
+<!---
+      <div style="background:#eef8f4; padding:20px; text-align:center; border-radius:10px; font-weight:bold;">
+        Trading Psychology & Risk
+      </div>
+
+      <div style="background:#eef8f4; padding:20px; text-align:center; border-radius:10px; font-weight:bold;">
+        Practical Session on Live Market
+      </div>--->
+
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- ======================= FREE SERVICES SECTION ======================= -->
+<section style="background:#f7f9ff; padding:50px 20px;">
+  <div style="max-width:1100px; margin:auto; text-align:center;">
+
+    <h2 style="color:#0f2340; font-size:26px;">
+      Finearn with Best Share Market Courses In Pune Offering Free Services
+    </h2>
+
+    <p style="color:#444; margin-top:10px; max-width:700px; margin:auto;">
+      Learn share trading easily and efficiently with Finearn Share Market Classes!
+      Our complimentary resources ensure that you maximize your course experience by
+      applying the teachings in real life.
+    </p>
+
+    <!-- Cards -->
+    <div style="display:flex; flex-wrap:wrap; gap:20px; margin-top:30px; justify-content:center;">
+
+      <div style="background:white; width:230px; padding:20px; border-radius:14px; box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+        <h3>Daily Study Materials</h3>
+      </div>
+
+      <div style="background:white; width:230px; padding:20px; border-radius:14px; box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+        <h3>Unlimited Live Practical Sessions</h3>
+      </div>
+
+      <div style="background:white; width:230px; padding:20px; border-radius:14px; box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+        <h3>Expert Mentorship</h3>
+      </div>
+
+      <div style="background:white; width:230px; padding:20px; border-radius:14px; box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+        <h3>Stock Scanner Access</h3>
+      </div>
+
+    </div>
+
+    <a href="#" style="color:#0066ff; font-weight:bold; text-decoration:none; display:inline-block; margin-top:15px;">
+      Read More
+    </a>
+
+  </div>
+</section>
+
+
+
+
+<!-- ======================= DEMO BANNER ======================= -->
+<section style="background:#c49ad6; padding:40px; text-align:center; color:white;">
+  <h3 style="font-size:26px;">Call Today To Get Free DEMO</h3>
+  <p style="max-width:600px; margin:auto;">
+    Get free counselling by our experienced counselors. We offer you free demo sessions.
+  </p>
+
+  <button style="margin-top:20px; text-decoration: none; background:#ffb347; border:0; padding:12px 30px; border-radius:8px; cursor:pointer;">
+    <a href="contact.html" style="text-decoration: none;">Call Now</a>
+  </button>
+</section>
+
+
+
+
+<!-- ======================= TESTIMONIALS ======================= -->
+<section style="background:white; padding:60px 20px;">
+  <div style="max-width:1100px; margin:auto;">
+
+    <h2 style="font-size:26px; color:#0f2340;">
+      Why Finearn Share Market Classes is Pune's Best Choice?
+    </h2>
+
+    <div style="display:flex; gap:40px; flex-wrap:wrap; margin-top:30px;">
+
+      <!-- Testimonial 1 -->
+      <div style="flex:1; min-width:280px; background:white; border-radius:14px; padding:20px; box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+        <img src="rutuja.jpg" style="width:160px; height:160px; border-radius:50%; object-fit:cover;">
+        <h3>Rutuja Dumbare</h3>
+        <p style="color:#777;">College Student</p>
+        <p style="color:#444;">
+          This recorded personal finance course was perfect for me. It explained mutual funds,
+          credit scores, and tax-saving tips in a simple way. One of my best investments this year!
+        </p>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div style="flex:1; min-width:280px; background:white; border-radius:14px; padding:20px; box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+        <img src="swapnil.png" style="width:160px; height:160px; border-radius:50%; object-fit:cover;">
+        <h3>Swapnil Hengade</h3>
+        <p style="color:#777;">Active Trader, Student</p>
+        <p style="color:#444;">
+          This course gave me clarity on investments & savings. It's crisp and perfectly designed
+          for self-paced learning. I recommend it to every freelancer out there!
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+<!-- ===================== FAQ SECTION ===================== -->
+<h2>Frequently Asked Questions</h2>
+
+<div class="faq-container">
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What is the Share Market?
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      The share market is a platform where investors buy and sell shares of publicly listed companies to earn profit.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Who can learn Share Market Trading?
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      Anyone above 18 years with basic financial knowledge can learn share market trading, including students and working professionals.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Do I need prior experience to start trading?
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      No prior experience is required. Our courses start from beginner level and move towards advanced strategies.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What is Intraday Trading?
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      Intraday trading involves buying and selling stocks within the same trading day to earn short-term profits.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What is Long-Term Investment?
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      Long-term investment means holding stocks for several years to benefit from company growth and compounding.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What is Technical Analysis?
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      Technical analysis studies price charts, patterns, and indicators to predict future price movements.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Is Share Market Trading risky?
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      Yes, trading involves risk, but proper knowledge, risk management, and discipline can reduce losses significantly.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Do you provide live market training?
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      Yes, we provide live market sessions where students learn real-time market analysis and trading execution.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Are offline classes available?
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      Yes, offline classes are available at Nashik, Niphad, and Yeola branches.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      How can I contact or enroll?
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      You can contact us via WhatsApp, phone call, or by filling the inquiry form on our website.
+    </div>
+  </div>
+
+</div>
+
+<script>
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach(item => {
+  item.querySelector(".faq-question").addEventListener("click", () => {
+    item.classList.toggle("active");
+  });
+});
+</script>
+
+
+<!--branches of classes -->
+
+<div class="branches-container">
+    <h2>Our Branches</h2>
+
+    <div class="card-wrapper">
+
+        <div class="branch-card">
+            <div class="card-title">Nashik Branch</div>
+            <div class="location">
+                <span class="loc-icon">📍</span> College Road, Nashik
+            </div>
+
+            <a href="https://maps.app.goo.gl/rqQ2pVQY7P6SFjZc9" target="_blank" class="map-btn">
+                View on Map
+            </a>
+        </div>
+
+        <div class="branch-card">
+            <div class="card-title">Niphad Branch</div>
+            <div class="location">
+                <span class="loc-icon">📍</span> Niphad, Nashik District
+            </div>
+
+            <a href="https://maps.app.goo.gl/FK3Hh6pTFGnVxgPFA" target="_blank" class="map-btn">
+                View on Map
+            </a>
+        </div>
+
+        <div class="branch-card">
+            <div class="card-title">Yeola Branch</div>
+            <div class="location">
+                <span class="loc-icon">📍</span> Yeola, Nashik District
+            </div>
+
+            <a href="https://maps.app.goo.gl/7x5uQQSkhjhj2eLZ7" target="_blank" class="map-btn">
+                View on Map
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<!-- -------------------- PAYMENT -------------------- -->
+<section id="payment">
+  <h2>Payment Options</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>🇮🇳 Indian Payment</h3>
+      <p>UPI, PhonePe, Google Pay, Paytm</p>
+      <p><b>UPI ID:</b> yourupi@bank</p>
+    </div>
+
+    <div class="card">
+      <h3>🌍 International Payment</h3>
+      <p>PayPal / Wise Transfer</p>
+      <p><b>PayPal Email:</b> yourmail@example.com</p>
+    </div>
+  </div>
+</section>
+
+<!-- -------------------- CONTACT -------------------- -->
+<section id="contact">
+  <h2>Contact Us</h2>
+
+  <form>
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Email Address">
+    <input type="text" placeholder="Phone Number">
+    <textarea rows="4" placeholder="Your Message"></textarea>
+    <button>Submit</button>
+  </form>
+</section>
+
+<!-- -------------------- FOOTER -------------------- -->
+<footer>
+  © 2025 Share Market Classes | All Rights Reserved
+</footer>
+  
+<script>
+function toggleMenu() {
+    var menu = document.getElementById("dropdownMenu");
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+
+// close menu when clicking outside
+document.addEventListener("click", function(event) {
+    var menu = document.getElementById("dropdownMenu");
+    var hamburger = document.querySelector(".hamburger");
+
+    if (!hamburger.contains(event.target) && !menu.contains(event.target)) {
+        menu.style.display = "none";
+    }
+});
+</script>
+
+<!-- BUTTON on right side to open pop up to show the social media link-->
+<!-----
+
+
+<button onclick="openPopup()" style="
+position:fixed; right:80px; top:10px; 
+background:none; border:none; cursor:pointer; color: black;
+z-index:2001; padding:0;">
+<h1>Login</h1>
+    <img src="user icon.jpg" style="width:35px; height:35px; object-fit:contain; border-radius: 50%;"> 
+</button>
+
+<button onclick="scrollToContact()" style="
+position:fixed; right:60px; bottom:40px; 
+background:none; border:none; cursor:pointer;
+z-index:2001; padding:0;">
+    <img src="phone.jpg" style="width:50px; height:50px; object-fit:contain; border-radius: 50%;">
+</button>
+
+<button onclick="window.location='qr.html'" style="
+position:fixed; right:60px; bottom:100px;
+background:none; border:none; cursor:pointer; padding:0; z-index:2001;">
+    <img src="telegram.jpg" style="width:50px; border-radius:50%;">
+</button>
+
+<button onclick="window.location='qr.html'" style="
+position:fixed; right:60px; bottom:160px;
+background:none; border:none; cursor:pointer; padding:0; z-index:2001;">
+    <img src="whatsapp.jpg" style="width:50px; border-radius:50%;">
+</button>
+
+<button onclick="window.location='qr.html'" style="
+position:fixed; right:60px; bottom:220px;
+background:none; border:none; cursor:pointer; padding:0; z-index:2001;">
+    <img src="instagram.jpg" style="width:50px; border-radius:50%;">
+</button>
+
+
+------>
+
+
+
+<!-- ================= POPUP ================= -->
+<div class="popup-container" id="popup">
+    
+    <!-- Login Form -->
+    <div class="popup-box" id="loginBox">
+        <h2>Login</h2>
+        <input type="email" placeholder="Enter Email">
+        <input type="password" placeholder="Enter Password">
+        <button>Login</button>
+        <p class="switch" onclick="showSignup()">Create new account</p>
+        <button class="close-btn" onclick="closePopup()">Close</button>
+    </div>
+
+    <!-- Signup Form -->
+    <div class="popup-box" id="signupBox" style="display:none;">
+        <h2>Signup</h2>
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button>Signup</button>
+        <p class="switch" onclick="showLogin()">Already have account? Login</p>
+        <button class="close-btn" onclick="closePopup()">Close</button>
+    </div>
+
+</div>
+
+<script>
+function openPopup(){
+    document.getElementById("popup").style.display="flex";
+}
+
+function closePopup(){
+    document.getElementById("popup").style.display="none";
+}
+
+function showSignup(){
+    document.getElementById("loginBox").style.display="none";
+    document.getElementById("signupBox").style.display="block";
+}
+
+function showLogin(){
+    document.getElementById("signupBox").style.display="none";
+    document.getElementById("loginBox").style.display="block";
+}
+
+
+
+function scrollToContact(){
+    window.location.href = "contact.html"; 
+}
+
+
+function scrollToQR(){
+    document.getElementById("qr-section").scrollIntoView({ behavior: "smooth" });
+}
+
+
+
+</script>
+
+
+
+
+</body>  
+</html>
