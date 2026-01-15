@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Student Reviews | Trade Guru Academy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#f4f6fb;
+}
+
+h1{
+  text-align:center;
+  color:#1f3c88;
+  margin:40px 0 10px;
+}
+
+.subtitle{
+  text-align:center;
+  color:#555;
+  margin-bottom:40px;
+}
+
+.review-grid{
+  max-width:1100px;
+  margin:auto;
+  padding:0 20px 60px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+  gap:25px;
+}
+
+.review-card{
+  background:white;
+  padding:25px;
+  border-radius:16px;
+  box-shadow:0 6px 25px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+
+.review-card:hover{
+  transform:translateY(-6px);
+}
+
+.review-card img{
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.review-card h3{
+  margin:10px 0 5px;
+  color:#0f2340;
+}
+
+.review-card span{
+  font-size:14px;
+  color:#777;
+}
+
+.review-card p{
+  margin-top:12px;
+  color:#444;
+  font-size:15px;
+  line-height:1.6;
+}
+
+.back-btn{
+  display:block;
+  width:fit-content;
+  margin:40px auto;
+  padding:10px 22px;
+  border-radius:25px;
+  background:#1f3c88;
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Student Reviews</h1>
+<p class="subtitle">Real feedback from students trained at Trade Guru Academy</p>
+
+<div class="review-grid">
+
+  <!-- Review 1 -->
+  <div class="review-card">
+    <img src="rutuja.jpg">
+    <h3>Rutuja Dumbare</h3>
+    <span>College Student</span>
+    <p>Excellent explanation of stock market basics. Concepts became very clear.</p>
+  </div>
+
+  <!-- Review 2 -->
+  <div class="review-card">
+    <img src="swapnil.png">
+    <h3>Swapnil Hengade</h3>
+    <span>Active Trader</span>
+    <p>Practical sessions helped me gain confidence in live market trading.</p>
+  </div>
+
+  <!-- Review 3 -->
+  <div class="review-card">
+    <img src="student1.jpg">
+    <h3>Amit Patil</h3>
+    <span>Working Professional</span>
+    <p>Best academy for learning trading with proper risk management.</p>
+  </div>
+
+  <!-- Review 4 -->
+  <div class="review-card">
+    <img src="student2.jpg">
+    <h3>Pooja Shinde</h3>
+    <span>Beginner Trader</span>
+    <p>Very supportive mentors and easy explanations for beginners.</p>
+  </div>
+
+  <!-- Review 5 -->
+  <div class="review-card">
+    <img src="student3.jpg">
+    <h3>Rahul Deshmukh</h3>
+    <span>Investor</span>
+    <p>Helped me understand long-term investment strategies clearly.</p>
+  </div>
+
+  <!-- Review 6 -->
+  <div class="review-card">
+    <img src="student4.jpg">
+    <h3>Neha Kulkarni</h3>
+    <span>Student</span>
+    <p>Recorded sessions are very useful and easy to revise anytime.</p>
+  </div>
+
+</div>
+
+<a href="index.html" class="back-btn">← Back to Home</a>
+
+</body>
+</html>
