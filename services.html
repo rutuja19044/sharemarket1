@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our Services | Trading Academy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* ================= THEME COLORS ================= */
+:root{
+  --primary:#0f4c5c;
+  --secondary:#1b6b7a;
+  --accent:#ff7a59;
+  --bg:#f4f7fa;
+  --card:#ffffff;
+  --text:#1f2d3d;
+}
+
+/* ================= GLOBAL ================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* ================= HERO ================= */
+.services-hero{
+  background: linear-gradient(135deg,var(--primary),var(--secondary));
+  padding:90px 20px;
+  text-align:center;
+  color:white;
+}
+
+.services-hero h1{
+  font-size:3rem;
+  margin-bottom:15px;
+}
+
+.services-hero p{
+  font-size:1.1rem;
+  max-width:700px;
+  margin:auto;
+  opacity:0.95;
+}
+
+/* ================= SERVICES SECTION ================= */
+.services-section{
+  padding:80px 20px;
+}
+
+.services-container{
+  max-width:1200px;
+  margin:auto;
+}
+
+/* Grid */
+.services-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+
+/* Card */
+.service-card{
+  background:var(--card);
+  border-radius:18px;
+  padding:35px 30px;
+  box-shadow:0 15px 35px rgba(0,0,0,0.08);
+  transition:all 0.35s ease;
+  position:relative;
+  overflow:hidden;
+}
+
+.service-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,var(--secondary),transparent);
+  opacity:0.05;
+}
+
+.service-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 25px 45px rgba(0,0,0,0.12);
+}
+
+/* Icon */
+.service-icon{
+  width:60px;
+  height:60px;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  color:white;
+  margin-bottom:20px;
+}
+
+/* Content */
+.service-card h3{
+  font-size:1.4rem;
+  margin-bottom:10px;
+}
+
+.service-card p{
+  font-size:0.95rem;
+  line-height:1.6;
+  color:#555;
+}
+
+/* ================= FACILITIES ================= */
+.facilities{
+  margin-top:90px;
+  background:white;
+  padding:80px 20px;
+}
+
+.facilities h2{
+  text-align:center;
+  font-size:2.4rem;
+  margin-bottom:50px;
+}
+
+.facilities-grid{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+}
+
+.facility{
+  background:var(--bg);
+  padding:22px;
+  border-radius:14px;
+  text-align:center;
+  font-weight:600;
+  box-shadow:0 10px 25px rgba(0,0,0,0.06);
+}
+
+/* ================= CTA ================= */
+.services-cta{
+  background:linear-gradient(135deg,var(--secondary),var(--primary));
+  padding:80px 20px;
+  text-align:center;
+  color:white;
+}
+
+.services-cta h2{
+  font-size:2.2rem;
+  margin-bottom:15px;
+}
+
+.services-cta p{
+  max-width:600px;
+  margin:auto;
+  margin-bottom:30px;
+}
+
+.services-cta a{
+  display:inline-block;
+  padding:14px 34px;
+  background:white;
+  color:var(--primary);
+  font-weight:bold;
+  text-decoration:none;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.services-cta a:hover{
+  background:var(--accent);
+  color:white;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+  .services-hero h1{
+    font-size:2.3rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="services-hero">
+  <h1>Our Learning Services</h1>
+  <p>We provide complete trading education with flexible learning modes,
+     expert guidance and practical market exposure.</p>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section">
+  <div class="services-container">
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">💻</div>
+        <h3>Online Live Classes</h3>
+        <p>Interactive live sessions with expert mentors, real-time doubt solving
+           and practical market analysis.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🏫</div>
+        <h3>Offline Classroom Training</h3>
+        <p>In-person sessions with structured curriculum, mentor interaction and
+           disciplined learning environment.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🎥</div>
+        <h3>Recorded Classes</h3>
+        <p>Lifetime access to recorded sessions for revision and flexible learning
+           anytime, anywhere.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📘</div>
+        <h3>Study Notes</h3>
+        <p>Easy-to-understand notes prepared by experts covering theory,
+           strategies and concepts.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📄</div>
+        <h3>PDF Resources</h3>
+        <p>Downloadable PDFs including strategies, charts, examples and practice
+           materials.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📊</div>
+        <h3>Live Market Practice</h3>
+        <p>Real market exposure with guided analysis, risk management and trade
+           execution practice.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- FACILITIES -->
+<section class="facilities">
+  <h2>Facilities We Provide</h2>
+
+  <div class="facilities-grid">
+    <div class="facility">✔ Lifetime Course Access</div>
+    <div class="facility">✔ Doubt Solving Support</div>
+    <div class="facility">✔ Practical Assignments</div>
+    <div class="facility">✔ Trading Strategies PDFs</div>
+    <div class="facility">✔ Beginner to Advanced Levels</div>
+    <div class="facility">✔ Mentor Guidance</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="services-cta">
+  <h2>Start Your Trading Journey Today</h2>
+  <p>Join our academy and learn trading the right way with structured courses
+     and expert mentorship.</p>
+  <a href="contact.html">Enroll Now</a>
+</section>
+
+</body>
+</html>
