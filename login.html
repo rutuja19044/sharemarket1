@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+
+<style>
+body{
+  margin:0;
+  font-family: Arial;
+  background:#f0ad72;
+}
+
+.popup-box{
+  padding:25px;
+}
+
+h3{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.row{
+  display:flex;
+  gap:10px;
+}
+
+input{
+  width:100%;
+  padding:8px;
+  border:none;
+  border-radius:4px;
+  margin-bottom:12px;
+}
+
+.course{
+  margin:13px 50px;
+  display:flex;              /* put in same line */
+  gap:25px;                  /* space between options */
+  align-items:right;
+}
+
+
+
+.captcha{
+  background:#fff;
+  padding:12px;
+  border-radius:4px;
+  margin-bottom:15px;
+  text-align: center;
+}
+
+button{
+  width:100%;
+  padding:10px;
+  background:#4db6e2;
+  border:none;
+  border-radius:6px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+@media(max-width:480px){
+  .row{flex-direction:column;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="popup-box">
+  <h3>Make Quick Enquiry - 95618 61818</h3>
+
+  <form>
+    <div class="row">
+      <input type="text" placeholder="Your Name *" required>
+      <input type="tel" placeholder="Mobile *" required>
+    </div>
+
+    <input type="text" placeholder="Your City *" required>
+
+    <div class="course">
+      <label><input type="radio" name="course"> Online Class</label>
+      <label><input type="radio" name="course"> Offline Class</label>
+    </div>
+
+    <div class="captcha">
+      <input type="checkbox"> I'm not a robot
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+</body>
+
+
+
+</html>
